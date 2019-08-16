@@ -30,9 +30,26 @@
         </div>
         <div class="row">
             <div class="col-12 timer text-center">
-                    <button type="button" id="start" class="btn btn-primary btn-lg">Start</button>
+                <h3>
+                    <span id="timerInfo">Time Left</span>
+                </h3>
+                <h1>
+                    <span id="timerDigits">00:00</span>
+                </h1>
             </div>
         </div>
+        <div class="row">
+            <div id="gameArea col-12">
+                <div id="questionsDiv" class="col-4 text-center">
+                    <p class="lead"><span id="askQuestion">The Great Wall of China is visible from the moon.</span></p>
+                    <div class="btn-group" role="group" aria-label="Basic example">
+                        <button type="button" class="btn btn-primary">True</button>
+                        <button type="button" class="btn btn-primary">False</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 <!-- Added link to the jQuery library -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>

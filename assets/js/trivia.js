@@ -1,88 +1,78 @@
+/*
+_____________________ Plan ______________________
+On the landing page there will be a simple header and button.
+Upon the submit event of the button, the quiz will start.
+#timerDigits DIV will display a timer.
+#gameArea div will contain 2 nested for loops.
+Loop 1 for the length of the array of questions
+    write the html for the questions to the page
+        Loop 2 for the length of the radio buttons
+            $write the html of the buttons to the page
+At the end of the loop $write a submit button
+The game will end upon the countdown = 0 or if user hits submit.
+$write the results to the html page
+Provide option to reset the game and start over.
+3 variables to
+1) Right 
+2) Wrong 
+3) Unanswered 
+4) Hold the user selection
+An object 
+Question 1 array
+Radio Buttons 2 Array
+Right Answer
+*/
+
 // Doc Ready
-$(document).ready(function(){
-    // Timer Value
-//setTimeout(timeUp, 1000 * 15);
+$(document).ready(function () {
+    // Variables for player
+    let right = 0;
+    let wrong = 0;
+    let unanswered = 12;
+    let answer = "";
+    // Object for questions
 
-// Variables for game scoring
+    let quiz = {
+        questions: [
+            'The Great Wall of China is visible from the moon.',
+            'Scotland voted to become an independent country during the referendum from September 2014.',
+            'Dihydrogen Monoxide was banned due to health risks after being discovered in 1983 inside swimming pools and drinking water.',
+            'Romanian belongs to the Romance language family, shared with French, Spanish, Portuguese and Italian.',
+            'The Lego Group was founded in 1932.',
+            'When you cry in space, your tears stick to your face.',
+            'On average, at least 1 person is killed by a drunk driver in the United States every hour.',
+            'You can legally drink alcohol while driving in Mississippi.',
+            'The Sun rises from the North',
+            'It is automatically considered entrapment in the United States if the police sell you illegal substances without revealing themselves.',
+            'The color orange is named after the fruit.',
+            'French is an official language in Canada.',
+        ],
+        choices: ['False', 'True'
+        ],
+        answers: ['False',
+            'True',
+            'False',
+            'True',
+            'True',
+            'True',
+            'True',
+            'True',
+            'False',
+            'False',
+            'True'
 
+        ],
+    }
 
-// question & answer array
+    // Display Questions & Answers
+    // Loop de dupe
+    for (var i = 0; i < quiz.length; i++) {
+        console.log(quiz[i]);
+        // 
+        // $(askQuestion).text(quiz.question[i]);
 
-var quiz = [
-    {
-        question: "The Great Wall of China is visible from the moon.",
-        choices: ["True", "False",],
-        correctAnswer: "False",
-    },
-    {
-        question: "Scotland voted to become an independent country during the referendum from September 2014.",
-        choices: ["True", "False",],
-        correctAnswer: "True",
-    },
-    {
-        question: "Dihydrogen Monoxide was banned due to health risks after being discovered in 1983 inside swimming pools and drinking water.",
-        choices: ["True", "False",],
-        correctAnswer: "False",
-    },
-    {
-        question: "Romanian belongs to the Romance language family, shared with French, Spanish, Portuguese and Italian.",
-        choices: ["True", "False",],
-        correctAnswer: "True",
-    },
-    {
-        question: "The Lego Group was founded in 1932.",
-        choices: ["True", "False",],
-        correctAnswer: "True",
-    },
-    {
-        question: "When you cry in space, your tears stick to your face.",
-        choices: ["True", "False",],
-        correctAnswer: "True",
-    },
-    {
-        question: "On average, at least 1 person is killed by a drunk driver in the United States every hour.",
-        choices: ["True", "False",],
-        correctAnswer: "True",
-    },
-    {
-        question: "You can legally drink alcohol while driving in Mississippi.",
-        choices: ["True", "False",],
-        correctAnswer: "True",
-    },
-    {
-        question: "The Sun rises from the North",
-        choices: ["True", "False",],
-        correctAnswer: "False",
-    },
-    {
-        question: "It is automatically considered entrapment in the United States if the police sell you illegal substances without revealing themselves.",
-        choices: ["True", "False",],
-        correctAnswer: "False",
-    },
-    {
-        question: "The color orange is named after the fruit.",
-        choices: ["True", "False",],
-        correctAnswer: "True",
-    },
-    {
-        question: "French is an official language in Canada.",
-        choices: ["True", "False",],
-        correctAnswer: "True",
-    }];
-
-
-      // Creating a variable to hold our array length.
-      // var arrayLength = myFarm.length;
-// This line of jQuery selects the div with the matching id (#questions)
-var questionsDiv = $("#questionsDiv");
-// Loop de dupe
-for (var i = 0; i < quiz.length; i++) {
-    // It then creates a new div for each question. Note we create divs and add the content in the same line.
-let questionsDiv = $('<h2 class="col-4 text-center">' + quiz[i][0] + '</h2>');
-questionDiv = quiz[i][0];
-console.log(quiz[i][0]);
-}
-//Timer
+        // 
+    }
 
 
 });
