@@ -71,15 +71,17 @@ var quiz = [
     }];
 
 
+      // Creating a variable to hold our array length.
+      // var arrayLength = myFarm.length;
 // This line of jQuery selects the div with the matching id (#questions)
 var questionsDiv = $("#questionsDiv");
 // Loop de dupe
 for (var i = 0; i < quiz.length; i++) {
     // It then creates a new div for each question. Note we create divs and add the content in the same line.
-    let questionsDiv = $('<h2 class="col-4 text-center">' + quiz[i][0] + '</h2>');
-    questionDiv = quiz[i][0];
-    console.log(quiz[i][0]);
-};
+let questionsDiv = $('<h2 class="col-4 text-center">' + quiz[i][0] + '</h2>');
+questionDiv = quiz[i][0];
+console.log(quiz[i][0]);
+}
 //Timer
 
 
