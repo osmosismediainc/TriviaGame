@@ -1,0 +1,9 @@
+#questionsDiv {
+    border: 1px solid black;
+    padding: 2%;
+}
+.timer {
+    border: 1px solid black;
+    padding: 2%;
+    width: 50%;
+}
