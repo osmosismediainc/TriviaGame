@@ -31,7 +31,6 @@ $(document).ready(function () {
     let unanswered = 12;
     let answer = "";
     // Object for questions
-
     let quiz = {
         questions: [
             'The Great Wall of China is visible from the moon.',
@@ -65,14 +64,34 @@ $(document).ready(function () {
     }
 
     // Display Questions & Answers
-    // Loop de dupe
+    // Loop de dupe for questions
     for (var i = 0; i < quiz.length; i++) {
-        console.log(quiz[i]);
+        console.log(quiz.questions[i]);
         // 
         // $(askQuestion).text(quiz.question[i]);
 
         // 
     }
 
+/*
+-------------------START---------------
+*/
 
+
+/* Gets Start Button
+
+$( "#start" ).click(function() {
+    alert( "start" );
+  });
+*/
+
+/*       //  Start on click.
+      $("#start").on("click", function() {
+        //  Set the button alert's timeout to run three seconds after the function's called.
+        delayButtonAlert = setTimeout(function() {
+          alert("Alert #2: Called 3 seconds after the start button is clicked.");
+        }, 3000);
+      });
+
+      */
 });
