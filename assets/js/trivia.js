@@ -42,13 +42,17 @@ $(document).ready(function () {
 });
 
 */
+    $('#question1').on("click",function(){
+        console.log($(this).val());
+    });
+
 
 
     
 /* $("input[type='button']").click(function(){
     var radioValue = $("input[name='gender']:checked").val();
     if(radioValue){
-        alert("Your are a - " + radioValue);
+         alert("Your are a - " + radioValue);
     }
 }); */
 
