@@ -12,8 +12,9 @@ $(document).ready(function () {
     let wrong = 0;
     let unanswered = 12;
     let answer = "";
+    
 /*
-    // Arays for questions
+    // Arays for questions (changed to hard-coded questions because I didnt figure out the )
     let questions = ['The Great Wall of China is visible from the moon.',
         'Scotland voted to become an independent country during the referendum from September 2014.',
         'Dihydrogen Monoxide was banned due to health risks after being discovered in 1983 inside swimming pools and drinking water.',
@@ -35,18 +36,39 @@ $(document).ready(function () {
         'True',
         'True'
     ];
+// Function to collect scores.
+/*$( "#answer1" ).prop( "checked", true ); {
+}
+
+    alert($(this).val());
+});
+
+*/
 
 
+    
+
+
+
+
+
+// Display The Scores In the Hidden score Div
+$("#unanswered").text(unanswered);
+$("#right").text(right);
+$("#wrong").text(wrong);
+
+// Function to show the quiz div
     function displayQuestions() {
         $('#quizArea').show();
     }
+    // 
     //  Start on click.
     $("#start").on("click", function () {
         // Hide the start button
         $("#start").hide();
         // Show The Quiz Area
         displayQuestions();
-        var count = 5;
+        var count = 60;
         var counter = setInterval(timer, 1000); //1000 will  run it every 1 second
         function timer() {
             count = count - 1;

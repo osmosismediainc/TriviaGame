@@ -24,7 +24,7 @@
         </div>
         <div class="row" id="instructions">
             <div class="col-12 text-center">
-                <p class="lead">This general trivia quiz is 12 questions.</p>
+                <p class="lead">This general trivia quiz is 6 questions.</p>
                 <p>In the time allotted, answer the questions best you can.</p>
                 <button type="button" id="start" class="btn btn-primary btn-lg">Start</button>
                 <br />
@@ -57,15 +57,17 @@
                 <!--  ORIGINAL FOR ARRAY <div id="question"></div> -->
                 <div id="questionsDiv" class="col-12 text-center">
                     <p class="lead"><span id="askQuestion">The Great Wall of China is visible from the moon.</span></p>
-                    <div id="answer1" class="btn-group" role="group" aria-label="Basic example">
-                        <button type="button" class="btn btn-primary" value="True">True</button>
-                        <button type="button" class="btn btn-primary" value="False">False</button>
-                    </div>
+                    <!--<button type="button" class="btn btn-primary" value="True">True</button>
+                    <button type="button" class="btn btn-primary" value="False">False</button>-->
+
+                    <label><input type="radio" id="answer1" value="False">False</label>
+                    <label><input type="radio" id="answer1" value="True">True</label>
+                    
                 </div>
                 <div id="questionsDiv" class="col-12 text-center">
                     <p class="lead"><span id="askQuestion">Dihydrogen Monoxide was banned due to health risks after
                             being discovered in 1983 inside swimming pools and drinking water.</span></p>
-                    <div id="answer2"  class="btn-group" role="group" aria-label="Basic example">
+                    <div id="answer2" class="btn-group" role="group" aria-label="Basic example">
                         <button type="button" class="btn btn-primary" value="True">True</button>
                         <button type="button" class="btn btn-primary" value="False">False</button>
                     </div>
