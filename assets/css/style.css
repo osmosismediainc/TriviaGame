@@ -1,12 +1,13 @@
 #questionsDiv {
-    border: 1px solid black;
+    border-bottom: 1px solid black;
     padding: 2%;
+
 }
 .timer {
-    border: 1px solid black;
+    border: 0px solid black;
     padding: 2%;
     width: 50%;
 }
-#gameArea {
-    
+#quizArea {
+    border: 0px solid black;
 }
