@@ -38,8 +38,6 @@ $(document).ready(function () {
     ];
 // Function to collect scores.
 /*$( "#answer1" ).prop( "checked", true ); {
-}
-
     alert($(this).val());
 });
 
@@ -47,7 +45,12 @@ $(document).ready(function () {
 
 
     
-
+/* $("input[type='button']").click(function(){
+    var radioValue = $("input[name='gender']:checked").val();
+    if(radioValue){
+        alert("Your are a - " + radioValue);
+    }
+}); */
 
 
 
