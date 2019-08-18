@@ -135,7 +135,7 @@ $(document).ready(function () {
         $("#start").hide();
         // Show The Quiz Area
         displayQuestions();
-        var count = 60;
+        var count = 15;
         var counter = setInterval(timer, 1000); //1000 will  run it every 1 second
         function timer() {
             count = count - 1;
