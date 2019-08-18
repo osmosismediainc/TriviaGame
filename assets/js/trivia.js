@@ -1,70 +1,130 @@
 // Doc Ready
 $(document).ready(function () {
     // Hide The Quiz Area
+    function hideQuiz() {}
     $('#quizArea').hide();
     $('#results').hide();
-    $('#restart').click(function() {
+    $('#restart').click(function () {
         location.reload();
     });
 
     // Variables for player
     let right = 0;
     let wrong = 0;
-    let unanswered = 12;
-    let answer = "";
-    
-/*
-    // Arays for questions (changed to hard-coded questions because I didnt figure out the )
-    let questions = ['The Great Wall of China is visible from the moon.',
-        'Scotland voted to become an independent country during the referendum from September 2014.',
-        'Dihydrogen Monoxide was banned due to health risks after being discovered in 1983 inside swimming pools and drinking water.',
-        'Romanian belongs to the Romance language family, shared with French, Spanish, Portuguese and Italian.',
-        'The Lego Group was founded in 1932.',
-        'When you cry in space, your tears stick to your face.',
-        'On average, at least 1 person is killed by a drunk driver in the United States every hour.',
-        'You can legally drink alcohol while driving in Mississippi.',
-        'The Sun rises from the North',
-        'It is automatically considered entrapment in the United States if the police sell you illegal substances without revealing themselves.',
-        'The color orange is named after the fruit.',
-        'French is an official language in Canada.'
-    ];
-    */
-    let answers = ["False",
-        'False',
-        'True',
-        'True',
-        'True',
-        'True'
-    ];
-// Function to collect scores.
-/*$( "#answer1" ).prop( "checked", true ); {
-    alert($(this).val());
-});
+    let unanswered = 6;
 
-*/
-    $('#question1').on("click",function(){
-        console.log($(this).val());
+    // Function to collect scores.
+
+    /*$( "#answer1" ).prop( "checked", true ); {
+        alert($(this).val());
+    });
+        $('#question1').on("click",function(){
+            console.log($(this).val());
+        });
+    
+    */
+    function updateScore() {
+        // Display The Scores In the Hidden score Div
+        $("#unanswered").text(unanswered);
+        $("#right").text(right);
+        $("#wrong").text(wrong);
+        $('#quizArea').hide();
+        $('#results').show();
+        $('#timerRow').hide();
+        $('#instructions').hide();
+        $('#start').hide();
+        return;
+    }
+    $("#scoreIt").click(function () {
+        updateScore()
+    })
+
+    // Answer Logic (lol)
+    // There has to be an easier way to do this, but I dont know what it is
+    $('input:radio[name=answer1]').click(function () {
+        var ans1 = $(this).val();
+        console.log(ans1);
+        if (ans1 === "False") {
+            right++;
+            unanswered--;
+            console.log(right);
+            $('#question1div').fadeOut();
+        } else {
+            wrong++;
+            unanswered--;
+            $('#question1div').fadeOut();
+        }
+    });
+    $('input:radio[name=answer2]').click(function () {
+        var ans2 = $(this).val();
+        if (ans2 === "False") {
+            right++;
+            unanswered--;
+            $('#question2div').fadeOut();
+        } else {
+            wrong++;
+            unanswered--;
+            $('#question2div').fadeOut();
+        }
+    });
+    $('input:radio[name=answer3]').click(function () {
+        var ans3 = $(this).val();
+        if (ans3 === "True") {
+            right++;
+            unanswered--;
+            $('#question3div').fadeOut();
+        } else {
+            wrong++;
+            unanswered--;
+            $('#question3div').fadeOut();
+        }
+    });
+    $('input:radio[name=answer4]').click(function () {
+        var ans4 = $(this).val();
+        if (ans4 === "True") {
+            right++;
+            unanswered--;
+            $('#question4div').fadeOut();
+        } else {
+            wrong++;
+            unanswered--;
+            $('#question4div').fadeOut();
+        }
+    });
+    $('input:radio[name=answer5]').click(function () {
+        var ans5 = $(this).val();
+        if (ans5 === "True") {
+            right++;
+            unanswered--;
+            $('#question5div').fadeOut();
+        } else {
+            wrong++;
+            unanswered--;
+            $('#question5div').fadeOut();
+        }
+    });
+    $('input:radio[name=answer6]').click(function () {
+        var ans6 = $(this).val();
+        if (ans6 === "True") {
+            right++;
+            unanswered--;
+            $('#question6div').fadeOut();
+        } else {
+            wrong++;
+            unanswered--;
+            $('#question6div').fadeOut();
+        }
     });
 
 
 
-    
-/* $("input[type='button']").click(function(){
-    var radioValue = $("input[name='gender']:checked").val();
-    if(radioValue){
-         alert("Your are a - " + radioValue);
-    }
-}); */
 
+    // Display The Scores In the Hidden score Div
+    $("#unanswered").text(unanswered);
+    $("#right").text(right);
+    $("#wrong").text(wrong);
 
-
-
-// Display The Scores In the Hidden score Div
-$("#unanswered").text(unanswered);
-$("#right").text(right);
-$("#wrong").text(wrong);
-
-// Function to show the quiz div
+    // Function to show the quiz div
     function displayQuestions() {
         $('#quizArea').show();
     }
@@ -82,12 +142,7 @@ $("#wrong").text(wrong);
             if (count < 0) {
                 clearInterval(counter);
                 //counter ended, do something here // Show the total hide the gameDiv
-                $('#quizArea').hide();
-                $('#results').show();
-                $('#timerRow').hide();
-                $('#instructions').hide();
-                $('#start').hide();
-                return;
+                updateScore()
             }
             $("#timerDigits").text(count);
         }
